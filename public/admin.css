@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #D5E0EB;
+    color: #2D5C88;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #2D5C88;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px 0;
+}
+
+main {
+    padding: 20px;
+}
+
+form {
+    background-color: #FFFFFF;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input[type="text"],
+form textarea,
+form input[type="checkbox"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #64B6F4;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #FCBE01;
+    color: #FFFFFF;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #FCA501;
+}
+
+#informativoList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaçamento entre os itens */
+    justify-content: flex-start;
+}
+
+/* Estilo para as imagens do informativo */
+.informativo-imagem {
+    width: 200px; /* Largura fixa */
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 10px; /* Espaçamento abaixo da imagem */
+}
+
+/* Estilo para os botões de exclusão */
+.delete-button {
+    background-color: #FF6347; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #FF4500; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo para o contêiner de cada informativo */
+.informativo-container {
+    margin-bottom: 20px; /* Espaçamento entre os informativos */
+    padding: 10px;
+    border: 1px solid #ccc; /* Borda opcional para cada informativo */
+    border-radius: 8px;
+    flex-basis: calc(33.333% - 20px); /* Subtraia o espaçamento para um alinhamento correto */
+    box-sizing: border-box; /* Isso garante que padding e borda sejam incluídos no width */
+}
+
+.informativo-imagem {
+    width: 100%; /* Largura total dentro do contêiner */
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 10px; /* Espaçamento abaixo da imagem */
+}
+/* Estilizando o Dropdown */
+select {
+    width: 100%; /* Torna o dropdown com largura total */
+    padding: 8px; /* Espaçamento interno para melhor visualização */
+    margin-bottom: 10px; /* Espaçamento abaixo do dropdown */
+    border: 1px solid #64B6F4; /* Borda com a cor temática */
+    border-radius: 4px; /* Bordas arredondadas */
+    background-color: #FFFFFF; /* Cor de fundo */
+    color: #2D5C88; /* Cor do texto */
+    font-family: Arial, sans-serif; /* Fonte para combinar com o restante do formulário */
+}
+
+/* Estilizando a opção do Dropdown */
+select option {
+    padding: 8px; /* Espaçamento interno para as opções */
+    background-color: #FFFFFF; /* Cor de fundo para as opções */
+    color: #2D5C88; /* Cor do texto das opções */
+}
+/* Estilos para alinhar o título do checkbox e o checkbox na mesma linha */
+.checkbox-container {
+    display: flex;
+    align-items: left;
+    margin-bottom: 10px;
+}
+
+.checkbox-container label {
+    margin-right: 10px;
+    white-space: nowrap; /* Impede que o texto do label quebre em várias linhas */
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-top: 0; /* Remove qualquer margem superior padrão */
+}
+.turno-indicacao {
+    display: block;
+    text-align: right;
+    color: #2D5C88; /* Escolha uma cor apropriada */
+    margin-top: 5px; /* Espaçamento acima do texto do turno */
+}

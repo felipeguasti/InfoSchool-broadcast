@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel Administrativo - InfoSchool Broadcast</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+        <h1>Painel Administrativo - InfoSchool Broadcast</h1>
+        <h3>EEEFM Coronel Olímpio Cunha</h3>
+    </header>
+    <main>
+        <form id="informativoForm">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" required></textarea>
+
+            <label for="imagemUrl">URL da Imagem:</label>
+            <input type="text" id="imagemUrl" name="imagemUrl">
+
+            <label for="videoUrl">URL do Vídeo:</label>
+            <input type="text" id="videoUrl" name="videoUrl">
+            <div class="checkbox-container">
+                <label for="videoComSom">Reproduzir vídeo com som:</label>
+                <input type="checkbox" id="videoComSom" name="videoComSom">
+            </div>
+            
+
+            <!-- Adição de seleção de turno -->
+            <label for="turno">Turno:</label>
+            <select id="turno" name="turno">
+                <option value="matutino">Matutino</option>
+                <option value="vespertino">Vespertino</option>
+            </select>
+
+
+            <button type="submit">Publicar Informativo</button>
+        </form>
+        <div id="informativoList"></div>
+    </main>
+    <script src="admin.js"></script>
+</body>
+</html>
