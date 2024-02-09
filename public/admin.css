@@ -3,7 +3,7 @@ body {
     background-color: #D5E0EB;
     color: #2D5C88;
     margin: 0;
-    padding: 0;
+    padding: 0 2%;
 }
 
 header {
@@ -12,9 +12,17 @@ header {
     text-align: center;
     padding: 10px 0;
 }
+header a {
+    text-decoration: none;
+    color: #9c9b9b
+}
+
+header a:hover {
+    color: #FFFFFF
+}
 
 main {
-    padding: 20px;
+    padding: 0px;
 }
 
 form {
@@ -30,13 +38,35 @@ form label {
 }
 
 form input[type="text"],
-form textarea,
-form input[type="checkbox"] {
-    width: 100%;
+form textarea {
+    width: 98%;
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #64B6F4;
     border-radius: 4px;
+}
+
+/* Estilos para alinhar o título do checkbox e o checkbox na mesma linha */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.checkbox-container label {
+    margin-right: 10px;
+    white-space: nowrap; /* Impede que o texto do label quebre em várias linhas */
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-top: 0; /* Remove qualquer margem superior padrão */
+    transform: scale(1.8); /* Aumenta o tamanho do checkbox em 50% */
+    margin-right: 10px; /* Espaçamento após o checkbox */
+    vertical-align: middle; /* Alinha verticalmente com o texto */
+}
+
+form input[type="checkbox"]{
+    border: 1px solid #64B6F4;
 }
 
 form button {
@@ -52,16 +82,51 @@ form button:hover {
     background-color: #FCA501;
 }
 
+/* Estilizando o Dropdown */
+select {
+    width: 99.5%; /* Torna o dropdown com largura total */
+    padding: 8px; /* Espaçamento interno para melhor visualização */
+    margin-bottom: 10px; /* Espaçamento abaixo do dropdown */
+    border: 1px solid #64B6F4; /* Borda com a cor temática */
+    border-radius: 4px; /* Bordas arredondadas */
+    background-color: #FFFFFF; /* Cor de fundo */
+    color: #2D5C88; /* Cor do texto */
+    font-family: Arial, sans-serif; /* Fonte para combinar com o restante do formulário */
+}
+
+/* Estilizando a opção do Dropdown */
+select option {
+    padding: 8px; /* Espaçamento interno para as opções */
+    background-color: #FFFFFF; /* Cor de fundo para as opções */
+    color: #2D5C88; /* Cor do texto das opções */
+}
+
+
+/* Estilo para o contêiner de cada informativo */
+
 #informativoList {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Espaçamento entre os itens */
+    gap: 30px; /* Espaçamento entre os itens */
     justify-content: flex-start;
 }
 
+.informativo-container {
+    margin-bottom: 20px; /* Espaçamento entre os informativos */
+    padding: 10px;
+    border: 1px solid #cccccc; /* Borda opcional para cada informativo */
+    border-radius: 8px;
+    flex-basis: calc(33.333% - 20px); /* Subtraia o espaçamento para um alinhamento correto */
+    box-sizing: border-box; /* Isso garante que padding e borda sejam incluídos no width */
+    
+}
 /* Estilo para as imagens do informativo */
 .informativo-imagem {
     width: 200px; /* Largura fixa */
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 10px; /* Espaçamento abaixo da imagem */
+    width: 100%; /* Largura total dentro do contêiner */
     height: auto;
     object-fit: cover;
     margin-bottom: 10px; /* Espaçamento abaixo da imagem */
@@ -82,58 +147,25 @@ form button:hover {
     background-color: #FF4500; /* Cor de fundo ao passar o mouse */
 }
 
-/* Estilo para o contêiner de cada informativo */
-.informativo-container {
-    margin-bottom: 20px; /* Espaçamento entre os informativos */
-    padding: 10px;
-    border: 1px solid #ccc; /* Borda opcional para cada informativo */
-    border-radius: 8px;
-    flex-basis: calc(33.333% - 20px); /* Subtraia o espaçamento para um alinhamento correto */
-    box-sizing: border-box; /* Isso garante que padding e borda sejam incluídos no width */
-}
-
-.informativo-imagem {
-    width: 100%; /* Largura total dentro do contêiner */
-    height: auto;
-    object-fit: cover;
-    margin-bottom: 10px; /* Espaçamento abaixo da imagem */
-}
-/* Estilizando o Dropdown */
-select {
-    width: 100%; /* Torna o dropdown com largura total */
-    padding: 8px; /* Espaçamento interno para melhor visualização */
-    margin-bottom: 10px; /* Espaçamento abaixo do dropdown */
-    border: 1px solid #64B6F4; /* Borda com a cor temática */
-    border-radius: 4px; /* Bordas arredondadas */
-    background-color: #FFFFFF; /* Cor de fundo */
-    color: #2D5C88; /* Cor do texto */
-    font-family: Arial, sans-serif; /* Fonte para combinar com o restante do formulário */
-}
-
-/* Estilizando a opção do Dropdown */
-select option {
-    padding: 8px; /* Espaçamento interno para as opções */
-    background-color: #FFFFFF; /* Cor de fundo para as opções */
-    color: #2D5C88; /* Cor do texto das opções */
-}
-/* Estilos para alinhar o título do checkbox e o checkbox na mesma linha */
-.checkbox-container {
-    display: flex;
-    align-items: left;
-    margin-bottom: 10px;
-}
-
-.checkbox-container label {
-    margin-right: 10px;
-    white-space: nowrap; /* Impede que o texto do label quebre em várias linhas */
-}
-
-.checkbox-container input[type="checkbox"] {
-    margin-top: 0; /* Remove qualquer margem superior padrão */
-}
 .turno-indicacao {
     display: block;
     text-align: right;
     color: #2D5C88; /* Escolha uma cor apropriada */
     margin-top: 5px; /* Espaçamento acima do texto do turno */
+}
+
+/* Estilo para os botões de edição */
+.edit-button {
+    background-color: #FFFFFF;
+    color: #FF6347;
+    border: 1px solid #FF6347;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-button:hover {
+    background-color: #FF4500;
+    color: #FFFFFF;
 }

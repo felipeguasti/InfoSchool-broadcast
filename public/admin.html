@@ -1,46 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Painel Administrativo - InfoSchool Broadcast</title>
-    <link rel="stylesheet" href="admin.css">
-</head>
-<body>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
     <header>
-        <h1>Painel Administrativo - InfoSchool Broadcast</h1>
-        <h3>EEEFM Coronel Olímpio Cunha</h3>
+      <h1>Painel Administrativo - InfoSchool Broadcast</h1>
+      <h3>Designed by 	&#64; <a href="http://www.felipeguasti.com.br/">Felipe Guasti</a></h3>
     </header>
-    <main>
-        <form id="informativoForm">
-            <label for="titulo">Título:</label>
-            <input type="text" id="titulo" name="titulo" required>
-
-            <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="mensagem" required></textarea>
-
-            <label for="imagemUrl">URL da Imagem:</label>
-            <input type="text" id="imagemUrl" name="imagemUrl">
-
-            <label for="videoUrl">URL do Vídeo:</label>
-            <input type="text" id="videoUrl" name="videoUrl">
-            <div class="checkbox-container">
-                <label for="videoComSom">Reproduzir vídeo com som:</label>
-                <input type="checkbox" id="videoComSom" name="videoComSom">
-            </div>
-            
-
-            <!-- Adição de seleção de turno -->
-            <label for="turno">Turno:</label>
-            <select id="turno" name="turno">
-                <option value="matutino">Matutino</option>
-                <option value="vespertino">Vespertino</option>
-            </select>
-
-
-            <button type="submit">Publicar Informativo</button>
+      <section id="mensagemFooterSection">
+        <h2>Mensagem do Rodapé</h2>
+        <form id="mensagemFooterForm">
+          <label for="textoMensagem">Mensagem do Rodapé:</label>
+          <input type="text" id="textoMensagem" name="textoMensagem" required />
+          <button type="submit">Enviar Mensagem</button>
         </form>
-        <div id="informativoList"></div>
+        <div id="mensagemPublicada"></div>
+      </section>
+      <h2>Mensagem Publicada</h2>
+      <div id="mensagemList"></div>
+      <!-- Adição do atributo 'enctype' para suportar o upload de arquivos -->
+      <section id="informativoSection">
+        <h2>Publicar Informativo</h2>
+        <form id="informativoForm" enctype="multipart/form-data">
+          <label for="titulo">Título:</label>
+          <input type="text" id="titulo" name="titulo" required />
+
+          <label for="mensagem">Mensagem:</label>
+          <textarea id="mensagem" name="mensagem" required></textarea>
+
+          <label for="imagemUrl">URL da Imagem:</label>
+          <input type="text" id="imagemUrl" name="imagemUrl" />
+
+          <!-- Campo para upload de imagem, corrigindo o id -->
+          <label for="imagemFile">Upload de Imagem:</label>
+          <input type="file" id="imagemFile" name="imagemFile" accept="image/*" />
+
+          <label for="videoUrl">URL do Vídeo:</label>
+          <input type="text" id="videoUrl" name="videoUrl" />
+          <div class="checkbox-container">
+            <label for="videoComSom">Reproduzir vídeo com som:</label>
+            <input type="checkbox" id="videoComSom" name="videoComSom" />
+          </div>
+
+          <label for="turno">Turno:</label>
+          <select id="turno" name="turno">
+            <option value="matutino">Matutino</option>
+            <option value="vespertino">Vespertino</option>
+            <option value="ambos">Ambos</option>
+          </select>
+
+          <button type="submit">Publicar Informativo</button>
+        </form>
+      </section>
+      <h2>Informativos Publicados</h2>
+      <div id="informativoList"></div>
     </main>
     <script src="admin.js"></script>
-</body>
+  </body>
 </html>

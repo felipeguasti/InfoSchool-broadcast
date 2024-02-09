@@ -36,6 +36,7 @@ body, html {
     position: absolute; /* Posiciona sobre o container */
     opacity: 1; /* Inicia escondido */
     transition: opacity 0.5s; /* Transição suave para exibição */
+    display: none;
 }
 .informativo-slide h1 {
     width: 38%;
@@ -62,7 +63,7 @@ body, html {
 
 /* Estilo para imagem e vídeo */
 .informativo-slide img,
-.informativo-slide video {
+.informativo-slide iframe {
     width: 50%; /* Largura ajustada para não ocupar a viewport inteira */
     height: 90%;
     object-fit: cover;
@@ -73,6 +74,13 @@ body, html {
     transform: rotate(6.39deg);
     background-color: #ffffff;
     padding: 30px;
+}
+
+/* Estilo específico para vídeos */
+#informativoContainer iframe {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Garante que o vídeo cubra o espaço disponível */
 }
 
 /* fundo com formas geométricas */
@@ -89,12 +97,23 @@ body, html {
     background-color: #D5E0EB;
     z-index: -1; /* Garante que o fundo fique atrás do conteúdo */
 }
-.informativo-slide {
-    display: none;
     /* Outros estilos */
-}
 
 .informativo-slide.active {
     display: block;
     /* Estilos para o slide ativo */
+}
+
+/* Posiciona a logo sobre todo o conteúdo */
+.logo-coc {
+    position: fixed; /* Fixa a logo na tela */
+    left: 1%; /* Alinha à esquerda */
+    bottom: 2%; /* Alinha na parte inferior da tela */
+    z-index: 1000; /* Garante que fique sobre os outros elementos */
+}
+
+/* Tamanho da logo */
+.logo-coc img {
+    width: 130px; /* Ajuste a largura conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
 }
